@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+InterfazLogin -> InterfazLogin: crearFrame()
+InterfazLogin -> Login: verificar credenciales()
+Login -> MenuPrincipal: crearFrame()
+MenuPrincipal -> GUIAlicuota: crearFrame()
+GUIAlicuota -> GUIAlicuota: inquilinosIngresados()
+GUIAlicuota -> Alicuota: generarComprobante()
+Alicuota -> GUIAlicuota: dispose()
+GUIAlicuota -> MenuPrincipal: crearFrame()
+MenuPrincipal -> GUIInstalacion: crearFrame()
+GUIInstalacion -> GUIInstalacion: inquilinosIngresados()
+GUIInstalacion -> Instalacion: generarComprobante()
+Instalacion -> GUIInstalacion: dispose()
+GUIInstalacion -> MenuPrincipal: crearFrame()
+MenuPrincipal -> GUIMulta: crearFrame()
+GUIMulta -> GUIMulta: inquilinosIngresados()
+GUIMulta -> Multa: enviarNotificacion()
+Multa -> GUIMulta: dispose()
+GUIMulta -> MenuPrincipal: crearFrame()
+MenuPrincipal -> GUIServicio: crearFrame()
+GUIServicio -> GUIServicio: setVisibleTipoPago()
+GUIServicio -> GUIServicio: inquilinosIngresados()
+GUIServicio -> Servicio: pagarServicio()
+Servicio -> GUIServicio: dispose()
+GUIServicio -> MenuPrincipal: crearFrame()
+MenuPrincipal -> GUITecnico: crearFrame()
+GUITecnico -> GUITecnico: tecnicosIngresados()
+GUITecnico -> Tecnico: generarNotificacion()
+Tecnico -> GUITecnico: dispose()
+GUITecnico -> MenuPrincipal: crearFrame
+MenuPrincipal -> InterfazLogin: crearFrame()
+@enduml

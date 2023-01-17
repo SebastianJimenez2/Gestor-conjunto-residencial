@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+InterfazLogin -> InterfazLogin: crearFrame()
+InterfazLogin -> Login: verificar credenciales()
+Login -> MenuPrincipal: crearFrame()
+MenuPrincipal -> GUIAlicuota: crearFrame()
+GUIAlicuota -> Alicuota: pagarAlicuota()
+Alicuota -> GUIAlicuota: dispose()
+GUIAlicuota -> MenuPrincipal: crearFrame()
+MenuPrincipal -> GUIInstalacion: crearFrame()
+GUIInstalacion -> Instalacion: solicitarInstalacion()
+Instalacion -> GUIInstalacion: dispose()
+GUIInstalacion -> MenuPrincipal: crearFrame()
+MenuPrincipal -> GUIMulta: crearFrame()
+GUIMulta -> Multa: pagarMulta()
+Multa -> GUIMulta: dispose()
+MenuPrincipal -> GUISeguridad: crearFrame()
+GUISeguridad -> Seguridad: solicitarVideo()
+Seguridad -> GUISeguridad: dispose()
+Seguridad -> MenuPrincipal: crearFrame()
+MenuPrincipal -> InterfazLogin: crearFrame()
+
+@enduml

@@ -1,0 +1,63 @@
+@startuml
+
+class Login {
++ verificarCredenciales()
+}
+
+class InterfazLogin{
++ crearFrame()
+}
+
+class AlícuotaGUIInquilino {
++ crearFrame()
+}
+
+class Alícuota {
++ pagarGUAlícuota()
+- valorAgregado:int
+}
+
+class InstalaciónGUIAdmin {
++ crearFrame()
+}
+
+class Instalación {
++ solicitarInstalación()
+- contador: int
+- reservaciones: array
+}
+
+class MenuPrincipalInquilino {
++ crearFrame()
+}
+
+class MultaGUIInquilino {
++ crearFrame()
++ multasPorDefecto()
+}
+
+class Multa {
++ pagarMulta()
+}
+
+class VideoDeSeguridadGUIInquilino {
++ crearFrame()
+}
+
+class VideoDeSeguridad {
++ solicitarVideo()
+}
+
+InterfazLogin --> Login
+Login --> MenuPrincipalInquilino
+MenuPrincipalInquilino --> AlícuotaGUIInquilino
+MenuPrincipalInquilino --> InstalaciónGUIInquilino
+MenuPrincipalInquilino --> MultaGUIInquilino
+MenuPrincipalInquilino --> VideoDeSeguridadGUIInquilino
+AlícuotaGUIInquilino --> Alícuota
+InstalaciónGUIInquilino --> Instalación
+MultaGUIInquilino --> Multa
+VideoDeSeguridadGUIInquilino --> VideoDeSeguridad
+
+
+@enduml

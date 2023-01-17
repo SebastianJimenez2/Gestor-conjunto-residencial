@@ -1,0 +1,80 @@
+@startuml
+
+class Login {
++ verificarCredenciales()
+}
+
+class InterfazLogin{
++ crearFrame()
+}
+
+class AlícuotaGUIAdmin {
++ crearFrame()
++ inquilinosIngresados()
+}
+
+class Alícuota {
++ generarComprobante()
+- valorAgregado:int
+}
+
+class InstalaciónGUIAdmin {
++ crearFrame()
++ inquilinosIngresados()
+}
+
+class Instalación {
++ generarComprobante()
+- contador: int
+- reservaciones: array
+}
+
+class MenuPrincipalAdmin {
++ crearFrame()
+}
+
+class MultaGUIAdmin {
++ crearFrame()
++ inquilinosIngresados()
+}
+
+class Multa {
++ enviarNotificacion()
+}
+
+class ServicioGUI {
+- servicio: Servicio
++ setVisibleTipoPago()
++ crearFrame()
++ inquilinosIngresados()
+}
+
+class Servicio {
++ pagarServicio()
+}
+
+class TecnicoGUI {
++ crearFrame()
++ tecnicosIngresados()
+}
+
+class Tecnico {
++ generarNotificacion()
+- valorAgregado: int
+}
+
+InterfazLogin --> Login
+Login --> MenuPrincipalAdmin
+MenuPrincipalAdmin --> AlícuotaGUIAdmin
+MenuPrincipalAdmin --> InstalaciónGUIAdmin
+MenuPrincipalAdmin --> MultaGUIAdmin
+MenuPrincipalAdmin --> ServicioGUI
+MenuPrincipalAdmin --> TecnicoGUI
+AlícuotaGUIAdmin --> Alícuota
+InstalaciónGUIAdmin --> Instalación
+MultaGUIAdmin --> Multa
+TecnicoGUI --> Tecnico
+ServicioGUI --> Servicio
+
+@enduml
+
